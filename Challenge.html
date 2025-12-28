@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>CTF Challenge</title>
+</head>
+<body>
+  <h2>ورود به سیستم</h2>
+  <form onsubmit="return checkLogin()">
+    <input type="text" id="username" placeholder="نام کاربری"><br><br>
+    <input type="password" id="password" placeholder="رمز عبور"><br><br>
+    <button type="submit">ورود</button>
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    function checkLogin() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+
+      if(user === "admin" && pass === "1234"){
+        document.getElementById("result").innerText = "🎉 Flag: CTF{simple_js_flag}";
+      } else {
+        document.getElementById("result").innerText = "دسترسی غیرمجاز!";
+      }
+      return false; // جلوگیری از رفرش صفحه
+    }
+  </script>
+</body>
+</html>
